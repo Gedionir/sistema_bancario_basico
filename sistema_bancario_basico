@@ -1,0 +1,34 @@
+
+menu = """
+[d] Depositar
+[s] Sacar
+[e] Extrato
+[q] Sair
+====> Digite sua opção: """
+
+
+saldo = 1000
+limite = 500
+extrato = ""
+numero_saques = 3
+LIMITE_SAQUES = 3
+contador_saque = 0
+saques_acumulados = 0
+contador_deposito = 0
+depositos_acumulados = 0
+
+while True:
+
+    opcao = input(menu)
+
+    if opcao == "d":
+        print("Depósito")
+        deposito = float(input("Quanto você deseja depositar?:"))
+        if (deposito > 0):
+            saldo = saldo + deposito
+            contador_deposito += 1
+            depositos_acumulados = depositos_acumulados + deposito
+            extrato = extrato + f"\nDepósito nº{contador_deposito}: + R$ {deposito:.2f}"
+        else:
+            print("Valor de saque inválido. Tente novamente!")
+
